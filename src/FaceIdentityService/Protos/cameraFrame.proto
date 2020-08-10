@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "FaceIdentityService";
+
+package cam;
+
+service CamStream {
+  rpc Process (stream CameraFrame) returns (stream Annotation);
+}
+
+message CameraFrame {
+  bytes img = 1;
+}
+
+message Annotation {
+  string message = 1;
+}

@@ -1,0 +1,96 @@
+﻿@page "/faces"
+
+@inject HttpClient httpClient
+@inject IJSRuntime JSRuntime
+
+<h1>Faces</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+
+            <EditForm Model="@newFace" OnValidSubmit="@SubmitForm">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="col-6">
+                    <InputText id="@nameof(Face.FirstName)" @bind-Value="newFace.FirstName" />
+                    <InputText id="@nameof(Face.LastName)" @bind-Value="newFace.LastName" />
+                </div>
+                <div class="col-6">
+                    <div id="image-cropper"
+                         class="slim"
+                         data-size="320,320"
+                         data-service="async.php">
+                        <input type="file" name="slim[]" />
+                    </div>
+                </div>
+
+                <button type="submit">Submit</button>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        @if (FaceList == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Picture</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var face in FaceList)
+                    {
+                        <tr>
+                            <td><img src="/img/@face.FileName" width="100px"/></td>
+                            <td>@face.FirstName</td>
+                            <td>@face.LastName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+
+@code {
+    private FaceViewModel newFace = new FaceViewModel();
+    private IEnumerable<Face> FaceList;
+
+    private async Task Refresh()
+    {
+        FaceList = await httpClient.GetFromJsonAsync<Face[]>("Face");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Refresh();
+    }
+
+    private async Task SubmitForm()
+    {
+        var jsonString = await JSRuntime.InvokeAsync<string>("GetSlimImageData");
+        newFace.Image = JsonSerializer.Deserialize<SlimImage>(jsonString);
+        await httpClient.PostAsJsonAsync<FaceViewModel>("Face", newFace);
+        await Refresh();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("ApplySlim", "image-cropper");
+        }
+    }
+}

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaceManagement.Server", "Server\FaceManagement.Server.csproj", "{4DDC6A07-652B-4A41-A0E7-4B9FA1E1D037}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaceManagement.Client", "Client\FaceManagement.Client.csproj", "{144C519C-780D-459D-ACB4-C69EECAEBFFB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaceManagement.Shared", "Shared\FaceManagement.Shared.csproj", "{111BE3B6-BFB6-4A27-AA70-CAFF01054E4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaceIdentityService", "FaceIdentityService\FaceIdentityService.csproj", "{57CF19E3-0DFB-4761-AADB-DD4E76174851}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Shared", "Backend.Shared\Backend.Shared.csproj", "{1D3C4E6E-7E6C-4A05-91C5-172959B53441}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tensorflow.Tools", "Tensorflow.Tools\Tensorflow.Tools.csproj", "{105F50F5-FD38-419B-8D1C-F719B700E789}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DDC6A07-652B-4A41-A0E7-4B9FA1E1D037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DDC6A07-652B-4A41-A0E7-4B9FA1E1D037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DDC6A07-652B-4A41-A0E7-4B9FA1E1D037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DDC6A07-652B-4A41-A0E7-4B9FA1E1D037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{144C519C-780D-459D-ACB4-C69EECAEBFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{144C519C-780D-459D-ACB4-C69EECAEBFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{144C519C-780D-459D-ACB4-C69EECAEBFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{144C519C-780D-459D-ACB4-C69EECAEBFFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111BE3B6-BFB6-4A27-AA70-CAFF01054E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111BE3B6-BFB6-4A27-AA70-CAFF01054E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111BE3B6-BFB6-4A27-AA70-CAFF01054E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111BE3B6-BFB6-4A27-AA70-CAFF01054E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CF19E3-0DFB-4761-AADB-DD4E76174851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CF19E3-0DFB-4761-AADB-DD4E76174851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CF19E3-0DFB-4761-AADB-DD4E76174851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CF19E3-0DFB-4761-AADB-DD4E76174851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3C4E6E-7E6C-4A05-91C5-172959B53441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3C4E6E-7E6C-4A05-91C5-172959B53441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3C4E6E-7E6C-4A05-91C5-172959B53441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3C4E6E-7E6C-4A05-91C5-172959B53441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{105F50F5-FD38-419B-8D1C-F719B700E789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105F50F5-FD38-419B-8D1C-F719B700E789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105F50F5-FD38-419B-8D1C-F719B700E789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105F50F5-FD38-419B-8D1C-F719B700E789}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5926CAFF-37CE-4945-92A9-48BA53294281}
+	EndGlobalSection
+EndGlobal
