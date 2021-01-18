@@ -41,6 +41,8 @@ namespace FaceManagement.Server
 
             services.AddTransient<TensorflowServiceClient>();
 
+            services.AddHttpClient<TensorflowServiceClientRest>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

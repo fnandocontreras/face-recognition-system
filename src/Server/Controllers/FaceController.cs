@@ -18,8 +18,8 @@ namespace FaceManagement.Server.Controllers
     public class FaceController : ControllerBase
     {
         FaceContext _dbContext;
-        TensorflowServiceClient _tfService;
-        public FaceController(FaceContext dbContext, TensorflowServiceClient tfService)
+        TensorflowServiceClientRest _tfService;
+        public FaceController(FaceContext dbContext, TensorflowServiceClientRest tfService)
         {
             _dbContext = dbContext;
             _tfService = tfService;
